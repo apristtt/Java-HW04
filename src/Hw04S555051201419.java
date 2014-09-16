@@ -66,13 +66,39 @@ public class Hw04S555051201419 extends javax.swing.JFrame {
         txtLoss.setRows(5);
         jScrollPane1.setViewportView(txtLoss);
 
+        txtValue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtValueActionPerformed(evt);
+            }
+        });
+        txtValue.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtValueKeyPressed(evt);
+            }
+        });
+
         buttonGroup1.add(rdoMale);
         rdoMale.setText("ชาย");
+        rdoMale.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdoMaleActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(rdoFemale);
         rdoFemale.setText("หญิง");
+        rdoFemale.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdoFemaleActionPerformed(evt);
+            }
+        });
 
         btnSearch.setText("ค้นหา");
+        btnSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchActionPerformed(evt);
+            }
+        });
 
         btnSave.setText("บันทึก");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
@@ -82,6 +108,11 @@ public class Hw04S555051201419 extends javax.swing.JFrame {
         });
 
         btnEdit.setText("แก้ไข");
+        btnEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditActionPerformed(evt);
+            }
+        });
 
         btnPrint.setText("พิมพ์");
         btnPrint.addActionListener(new java.awt.event.ActionListener() {
@@ -180,28 +211,30 @@ public class Hw04S555051201419 extends javax.swing.JFrame {
         } else{
             sex = 'F';
         }
-        
-//         if (rdoFemale.isSelected())
-        
-//        if(sex='M'){
-        
+
         String loss= txtLoss.getText();
         double value = Double.parseDouble(txtValue.getText());
-//        System.out.println(num + name + loss + value);
-//        if(num>0){
+        
+        if(!txtNum.getText().matches("\\d{1,}")){
+            JOptionPane.showMessageDialog(null, "Please type in number!");
+        } else if(!txtValue.getText().matches("\\d{1,}")){
+            JOptionPane.showMessageDialog(null, "Please type in number!");
+        } else {
+        
             user[num] = new Loss(num);
             user[num].setNum(num);
             user[num].setName(name);
             user[num].setSex(sex);
             user[num].setLoss(loss);
             user[num].setValue(value);
-//        }
-        System.out.println(user[num].getNum() +""
-                                    + user[num].getName() +"" 
-                                    + user[num].getSex()+""
-                                    + user[num].getLoss() +""
-                                    + user[num].getValue()+""
-                                    +"Was added to object");
+            JOptionPane.showMessageDialog(null, "บันทึกข้อมูลเรียบร้อยแล้ว");
+        }
+//        System.out.println(user[num].getNum() +""
+//                                    + user[num].getName() +"" 
+//                                    + user[num].getSex()+""
+//                                    + user[num].getLoss() +""
+//                                    + user[num].getValue()+""
+//                                    +"Was added to object");
         
     }//GEN-LAST:event_btnSaveActionPerformed
 
@@ -209,16 +242,67 @@ public class Hw04S555051201419 extends javax.swing.JFrame {
         // TODO add your handling code here:
         
          int num = Integer.parseInt(txtNum.getText());
+         //String [] sexTitle = {"ชาย", "หญิง"};
+//         String sexMorF;
+//
+//            if(user[num].getSex() == 'M'){
+//                sexMorF = rdoMale.getText();
+//            } else if(user[num].getSex() == 'F'){
+//                sexMorF = rdoFemale.getText();
+//            }
+         
          if(num>0){
-        JOptionPane.showMessageDialog(null, user[num].getNum() +""
-                                    + user[num].getName() +"" 
-                                    + user[num].getSex()+""
-                                    + user[num].getLoss() +""
-                                    + user[num].getValue()+"");
+           JOptionPane.showMessageDialog(null, "รายการที่ : " + user[num].getNum() +"\n"
+                                       +"ชื่อ - สกุล : " + user[num].getName() +"\n" 
+                                       +"เพศ : " + user[num].getSex() +"\n"
+                                       + "สูญเสีย : " + user[num].getLoss() +"\n"
+                                       + "มูลค่า : " + user[num].getValue()+"");
         } else {
-            JOptionPane.showMessageDialog(null, "Fail ja");
+            JOptionPane.showMessageDialog(null, "Null");
         }
     }//GEN-LAST:event_btnPrintActionPerformed
+
+    private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btnEditActionPerformed
+
+    private void rdoMaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdoMaleActionPerformed
+        // TODO add your handling code here:
+//        String sexMorF;
+//         if(user[num].getSex() == 'M'){
+//                sexMorF = rdoMale.getText();
+//            } 
+    }//GEN-LAST:event_rdoMaleActionPerformed
+
+    private void rdoFemaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdoFemaleActionPerformed
+        // TODO add your handling code here:
+//        String sexMorF;
+//        if(user[num].getSex() == 'F'){
+//                sexMorF = rdoFemale.getText();
+//            }
+    }//GEN-LAST:event_rdoFemaleActionPerformed
+
+    private void txtValueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtValueActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtValueActionPerformed
+
+    private void txtValueKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtValueKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtValueKeyPressed
+
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
+        // TODO add your handling code here:
+        int num = Integer.parseInt(txtNum.getText());
+        txtName.setText(user[num].getName());
+        if(user[num].getSex() == 'M'){
+            rdoMale.setSelected(true);
+        } else if(user[num].getSex() == 'F'){
+            rdoFemale.setSelected(true);
+        }
+        txtLoss.setText(user[num].getLoss());
+        txtValue.setText(user[num].getValue() +"");
+    }//GEN-LAST:event_btnSearchActionPerformed
 
     
     /**
