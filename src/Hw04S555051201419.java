@@ -217,10 +217,7 @@ public class Hw04S555051201419 extends javax.swing.JFrame {
         
         if(!txtNum.getText().matches("\\d{1,}")){
             JOptionPane.showMessageDialog(null, "Please type in number!");
-        } else if(!txtValue.getText().matches("\\d{1,}")){
-            JOptionPane.showMessageDialog(null, "Please type in number!");
         } else {
-        
             user[num] = new Loss(num);
             user[num].setNum(num);
             user[num].setName(name);
@@ -264,7 +261,29 @@ public class Hw04S555051201419 extends javax.swing.JFrame {
 
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
         // TODO add your handling code here:
+        int num = Integer.parseInt(txtNum.getText());
+        String name = txtName.getText();
+        char sex;
+        if(rdoMale.isSelected()){
+           sex =  'M';
+        } else{
+            sex = 'F';
+        }
+
+        String loss= txtLoss.getText();
+        double value = Double.parseDouble(txtValue.getText());
         
+        if(!txtNum.getText().matches("\\d{1,}")){
+            JOptionPane.showMessageDialog(null, "Please type in number!");
+        } else {
+            user[num] = new Loss(num);
+            user[num].setNum(num);
+            user[num].setName(name);
+            user[num].setSex(sex);
+            user[num].setLoss(loss);
+            user[num].setValue(value);
+            JOptionPane.showMessageDialog(null, "แก้ไขข้อมูลเรียบร้อยแล้ว");
+        }
     }//GEN-LAST:event_btnEditActionPerformed
 
     private void rdoMaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdoMaleActionPerformed
