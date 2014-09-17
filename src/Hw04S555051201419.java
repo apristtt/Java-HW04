@@ -226,12 +226,6 @@ public class Hw04S555051201419 extends javax.swing.JFrame {
             user[num].setValue(value);
             JOptionPane.showMessageDialog(null, "บันทึกข้อมูลเรียบร้อยแล้ว");
         }
-//        System.out.println(user[num].getNum() +""
-//                                    + user[num].getName() +"" 
-//                                    + user[num].getSex()+""
-//                                    + user[num].getLoss() +""
-//                                    + user[num].getValue()+""
-//                                    +"Was added to object");
         
     }//GEN-LAST:event_btnSaveActionPerformed
 
@@ -239,15 +233,6 @@ public class Hw04S555051201419 extends javax.swing.JFrame {
         // TODO add your handling code here:
         
          int num = Integer.parseInt(txtNum.getText());
-         //String [] sexTitle = {"ชาย", "หญิง"};
-//         String sexMorF;
-//
-//            if(user[num].getSex() == 'M'){
-//                sexMorF = rdoMale.getText();
-//            } else if(user[num].getSex() == 'F'){
-//                sexMorF = rdoFemale.getText();
-//            }
-         
          if(num>0){
            JOptionPane.showMessageDialog(null, "รายการที่ : " + user[num].getNum() +"\n"
                                        +"ชื่อ - สกุล : " + user[num].getName() +"\n" 
@@ -288,18 +273,10 @@ public class Hw04S555051201419 extends javax.swing.JFrame {
 
     private void rdoMaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdoMaleActionPerformed
         // TODO add your handling code here:
-//        String sexMorF;
-//         if(user[num].getSex() == 'M'){
-//                sexMorF = rdoMale.getText();
-//            } 
     }//GEN-LAST:event_rdoMaleActionPerformed
 
     private void rdoFemaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdoFemaleActionPerformed
         // TODO add your handling code here:
-//        String sexMorF;
-//        if(user[num].getSex() == 'F'){
-//                sexMorF = rdoFemale.getText();
-//            }
     }//GEN-LAST:event_rdoFemaleActionPerformed
 
     private void txtValueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtValueActionPerformed
